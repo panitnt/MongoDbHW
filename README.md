@@ -46,18 +46,18 @@ Outputs:
 ### Find the total marks for each student across all subjects.
 ```
 db.scores.aggregate([
-  {$group: {_id: '$name', marks: {$avg: '$marks'}}}
+  {$group: {_id: '$name', marks: {$sum: '$marks'}}}
 ])
 ```
 **Output:**
 
 ```
 [
-  { _id: 'Alison', marks: 84 },
-  { _id: 'Rav', marks: 72 },
+  { _id: 'Alison', marks: 252 },
+  { _id: 'Steve', marks: 247 },
   { _id: 'Jan', marks: 0 },
-  { _id: 'Ramesh', marks: 74.33333333333333 },
-  { _id: 'Steve', marks: 82.33333333333333 }
+  { _id: 'Ramesh', marks: 223 },
+  { _id: 'Rav', marks: 216 }
 ]
 ```
 ### Find the maximum marks scored in each subject.
